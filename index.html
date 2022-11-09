@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Computer</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        * {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+}
+
+#vungchua {
+    margin-top: 15px;
+}
+
+label {
+    font-size: 19px;
+    color: blue;
+    font-weight: 550;
+}
+
+.tinhtuoiall {
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <h1>Smart Computer</h1>
+    <div class="container">
+        <div class="form-group">
+            <label for="usr">Mời nhập tuổi của bạn: </label>
+            <input type="number" class="form-control" id="ageinput">
+        </div>
+        <div class="tinhtuoiall">
+            <button type="button" class="btn btn-success" onclick="tinhtuoi()">Tính Tuổi</button>
+        </div>
+        <div id="vungchua"></div>
+    </div>
+</body>
+<script>
+    function tinhtuoi() {
+    var tuoinhap = document.getElementById("ageinput").value;
+
+    if(tuoinhap==""){
+        document.getElementById("vungchua").innerHTML = '<div class="alert alert-danger">Không được để rỗng</div>'
+    }else if(tuoinhap<=0){
+        document.getElementById("vungchua").innerHTML = '<div class="alert alert-danger">Mày chưa đẻ mà đòi tao tính à</div>'
+    }else if(tuoinhap<=100){
+        document.getElementById("vungchua").innerHTML = '<div class="alert alert-success">Tuổi của bạn là: '+ tuoinhap+'</div>'
+    } else {
+        document.getElementById("vungchua").innerHTML = '<div class="alert alert-danger">Con lạy cụ, cụ có phải là người không vậy ?</div>';
+    }
+}
+</script>
+</html>
